@@ -3,248 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Blue Star Engineering Co. Ltd.</title>
+    <title>Services | AFRI TECH - Electrical & Gadget Services in Juba</title>
+    <meta name="description" content="AFRI TECH offers professional electrical installation, repairs, gadget support and more in Juba, South Sudan. Free delivery available.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header class="navbar">
+    <header>
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-star"></i>
-                Blue<span>Star</span>
-            </div>
-            <div class="menu-toggle">☰</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img src="assets/afrilogo.jpg" alt="AFRI TECH Logo" class="logo">
+                    <a href="index.html" class="brand-text">AFRI <span>TECH</span></a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Page Hero -->
+    <section class="page-hero">
         <div class="container">
             <h1>Our Services</h1>
-            <p>Comprehensive Samsung appliance services for optimal performance</p>
+            <p>Comprehensive electrical and gadget services to meet all your technology needs in Juba.</p>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="section services-page">
+    <section class="page-section">
         <div class="container">
-            <div class="services-tabs">
-                <div class="service-tab active" data-tab="installation">
+            <h2 class="section-title">Professional Services</h2>
+            <div class="services-grid">
+                <div class="service-card loading">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electrical Installation</h3>
+                    <p>Professional home and office electrical wiring, fixture installation, and electrical system setup by certified technicians.</p>
+                </div>
+                <div class="service-card loading">
                     <i class="fas fa-tools"></i>
-                    <span>Installation</span>
+                    <h3>Repair Services</h3>
+                    <p>Expert repair for a wide range of gadgets and electronics including phones, tablets, laptops, and home appliances.</p>
                 </div>
-                <div class="service-tab" data-tab="maintenance">
-                    <i class="fas fa-cogs"></i>
-                    <span>Maintenance</span>
-                </div>
-                <div class="service-tab" data-tab="repair">
-                    <i class="fas fa-wrench"></i>
-                    <span>Repair</span>
-                </div>
-                <div class="service-tab" data-tab="warranty">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Warranty</span>
-                </div>
-                <div class="service-tab" data-tab="support">
+                <div class="service-card loading">
                     <i class="fas fa-headset"></i>
-                    <span>Support</span>
+                    <h3>Gadget Support</h3>
+                    <p>Comprehensive setup, troubleshooting, and technical support for all your devices and smart home systems.</p>
+                </div>
+                <div class="service-card loading">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Network Setup</h3>
+                    <p>Professional WiFi network installation, configuration, and optimization for homes and small businesses.</p>
+                </div>
+                <div class="service-card loading">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Systems</h3>
+                    <p>Installation and maintenance of CCTV cameras, alarm systems, and home security solutions.</p>
+                </div>
+                <div class="service-card loading">
+                    <i class="fas fa-solar-panel"></i>
+                    <h3>Power Solutions</h3>
+                    <p>Installation of UPS systems, voltage stabilizers, and consultation on power backup solutions.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="service-content active" id="installation">
-                <div class="service-detail">
-                    <div class="service-image">
-                        <img src="assets/pro.jpg" alt="Professional Installation">
-                    </div>
-                    <div class="service-info">
-                        <h2>Professional Installation</h2>
-                        <p>Our certified technicians ensure proper installation of all Samsung appliances for optimal performance and longevity. We follow manufacturer specifications and safety standards.</p>
-                        <ul class="service-benefits">
-                            <li><i class="fas fa-check"></i> Expert installation by certified technicians</li>
-                            <li><i class="fas fa-check"></i> Compliance with manufacturer specifications</li>
-                            <li><i class="fas fa-check"></i> Safety checks and testing</li>
-                            <li><i class="fas fa-check"></i> User guidance and demonstration</li>
-                            <li><i class="fas fa-check"></i> Clean and professional work</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="contact.html" class="btn btn-primary">Schedule Installation</a>
-                            <span class="service-note">Available 7 days a week</span>
-                        </div>
+    <!-- Service Highlights -->
+    <section class="service-highlights">
+        <div class="container">
+            <div class="highlight-items">
+                <div class="highlight-item">
+                    <i class="fas fa-truck"></i>
+                    <div>
+                        <strong>Free Delivery Within Juba</strong>
+                        <p style="margin-top: 0.5rem; opacity: 0.9;">30-40 minute delivery service</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="service-content" id="maintenance">
-                <div class="service-detail">
-                    <div class="service-image">
-                        <img src="assets/proo.jpg" alt="Regular Maintenance">
-                    </div>
-                    <div class="service-info">
-                        <h2>Regular Maintenance</h2>
-                        <p>Extend the lifespan of your appliances with our comprehensive maintenance services. Regular maintenance ensures optimal performance and prevents costly repairs.</p>
-                        <ul class="service-benefits">
-                            <li><i class="fas fa-check"></i> Preventive maintenance plans</li>
-                            <li><i class="fas fa-check"></i> Performance optimization</li>
-                            <li><i class="fas fa-check"></i> Cleaning and calibration</li>
-                            <li><i class="fas fa-check"></i> Early problem detection</li>
-                            <li><i class="fas fa-check"></i> Extended appliance lifespan</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="contact.html" class="btn btn-primary">Book Maintenance</a>
-                            <span class="service-note">Keep your appliances running smoothly</span>
-                        </div>
+                <div class="highlight-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <div>
+                        <strong>Cash on Delivery Available</strong>
+                        <p style="margin-top: 0.5rem; opacity: 0.9;">Pay when you receive your order</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="service-content" id="repair">
-                <div class="service-detail">
-                    <div class="service-image">
-                        <img src="assets/prof.jpg" alt="Expert Repair">
-                    </div>
-                    <div class="service-info">
-                        <h2>Expert Repair Services</h2>
-                        <p>Fast and reliable repair services for all Samsung appliances using genuine parts and advanced diagnostic tools. We fix it right the first time.</p>
-                        <ul class="service-benefits">
-                            <li><i class="fas fa-check"></i> Same-day service available</li>
-                            <li><i class="fas fa-check"></i> Genuine Samsung parts</li>
-                            <li><i class="fas fa-check"></i> Advanced diagnostic equipment</li>
-                            <li><i class="fas fa-check"></i> Transparent pricing</li>
-                            <li><i class="fas fa-check"></i> Quality guaranteed</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="contact.html" class="btn btn-primary">Request Repair</a>
-                            <span class="service-note">Emergency services available</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-content" id="warranty">
-                <div class="service-detail">
-                    <div class="service-image">
-                        <img src="assets/proff.jpg" alt="Warranty Services">
-                    </div>
-                    <div class="service-info">
-                        <h2>Warranty Services</h2>
-                        <p>Comprehensive warranty support for all Samsung products with quick claim processing and genuine parts replacement. Your investment is protected.</p>
-                        <ul class="service-benefits">
-                            <li><i class="fas fa-check"></i> Warranty registration assistance</li>
-                            <li><i class="fas fa-check"></i> Fast claim processing</li>
-                            <li><i class="fas fa-check"></i> Genuine parts replacement</li>
-                            <li><i class="fas fa-check"></i> Extended warranty options</li>
-                            <li><i class="fas fa-check"></i> No hidden costs</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="contact.html" class="btn btn-primary">Check Warranty</a>
-                            <span class="service-note">Protect your investment</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-content" id="support">
-                <div class="service-detail">
-                    <div class="service-image">
-                        <img src="assets/proof.jpg" alt="Customer Support">
-                    </div>
-                    <div class="service-info">
-                        <h2>24/7 Customer Support</h2>
-                        <p>Round-the-clock support for all your Samsung appliance needs and technical queries with quick response times. We're here when you need us.</p>
-                        <ul class="service-benefits">
-                            <li><i class="fas fa-check"></i> 24/7 helpline for emergencies</li>
-                            <li><i class="fas fa-check"></i> Technical troubleshooting</li>
-                            <li><i class="fas fa-check"></i> Remote assistance</li>
-                            <li><i class="fas fa-check"></i> Quick response time</li>
-                            <li><i class="fas fa-check"></i> Multilingual support</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="contact.html" class="btn btn-primary">Get Support</a>
-                            <span class="service-note">We're here to help 24/7</span>
-                        </div>
+                <div class="highlight-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Quick Service Response</strong>
+                        <p style="margin-top: 0.5rem; opacity: 0.9;">Same-day service available</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Inquiry Section -->
-    <section class="section service-inquiry">
+    <!-- Process Section -->
+    <section class="page-section">
         <div class="container">
-            <div class="inquiry-content">
-                <h2>Need Professional Service?</h2>
-                <p>Contact us today for a free consultation and quote for your Samsung appliance needs.</p>
-                <div class="inquiry-features">
-                    <div class="inquiry-feature">
-                        <i class="fas fa-clock"></i>
-                        <h4>Quick Response</h4>
-                        <p>We respond to all inquiries within 2 hours</p>
-                    </div>
-                    <div class="inquiry-feature">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Certified Technicians</h4>
-                        <p>All our technicians are Samsung-certified</p>
-                    </div>
-                    <div class="inquiry-feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Quality Guarantee</h4>
-                        <p>We stand behind our work with a satisfaction guarantee</p>
-                    </div>
+            <h2 class="section-title">How It Works</h2>
+            <div class="features-grid">
+                <div class="feature-item loading">
+                    <div style="background: var(--color-navy); color: var(--color-white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: bold;">1</div>
+                    <h3>Contact Us</h3>
+                    <p>Call, WhatsApp, or visit our location to describe your service needs.</p>
                 </div>
-                <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+                <div class="feature-item loading">
+                    <div style="background: var(--color-navy); color: var(--color-white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: bold;">2</div>
+                    <h3>Get a Quote</h3>
+                    <p>We provide a transparent cost estimate with no hidden fees.</p>
+                </div>
+                <div class="feature-item loading">
+                    <div style="background: var(--color-navy); color: var(--color-white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: bold;">3</div>
+                    <h3>Service Delivery</h3>
+                    <p>Our experts complete the service with quality and efficiency.</p>
+                </div>
+                <div class="feature-item loading">
+                    <div style="background: var(--color-navy); color: var(--color-white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: bold;">4</div>
+                    <h3>After-Sales Support</h3>
+                    <p>We provide ongoing support and warranty for our services.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-column">
-                    <h4>Blue Star Engineering</h4>
-                    <p>Your trusted partner for Samsung appliances in South Sudan. Quality products and professional services since 2010.</p>
+                    <img src="assets/afrilogo.jpg" alt="AFRI TECH Logo" class="footer-logo">
+                    <h3>AFRI TECH</h3>
+                    <p>Your trusted partner for quality electronics and electrical services in Juba, South Sudan.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Products</a></li>
+                        <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="products.html">Air Conditioners</a></li>
-                        <li><a href="products.html">Water Heaters</a></li>
-                        <li><a href="products.html">Generators</a></li>
-                        <li><a href="products.html">Thermostats</a></li>
-                        <li><a href="products.html">Lighting</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>📍 Juba, South Sudan</li>
-                        <li>📞 +211 927 490 141</li>
-                        <li>📞 0910 545 500</li>
-                        <li>✉️ info@bluestar-eng.com</li>
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+211927930310"><i class="fas fa-phone-alt"></i> +211 927 930 310</a></li>
+                        <li><a href="https://wa.me/211927930310"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:info@afritech.com"><i class="fas fa-envelope"></i> info@afritech.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Blue Star Engineering Co. Ltd. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AFRI TECH. All rights reserved. | Proudly serving Juba, South Sudan</p>
             </div>
         </div>
     </footer>
