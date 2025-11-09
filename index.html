@@ -3,402 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Star Engineering Co. Ltd. | Premium Samsung Appliances</title>
+    <title>AFRI TECH | Quality Electronics in Juba, South Sudan</title>
+    <meta name="description" content="AFRI TECH offers quality gadgets, fast delivery, and 100% Dubai imports in Juba, South Sudan. Free delivery within Juba.">
+    
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Import Inter and Playfair Display Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header class="navbar">
+    <header>
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-star"></i>
-                Blue<span>Star</span>
-            </div>
-            <div class="menu-toggle">☰</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <nav class="navbar">
+                <div class="logo-container">
+                    <!-- Replace with actual logo image -->
+                    <img src="assets/afrilogo.jpg" alt="AFRI TECH Logo" class="logo">
+                    <a href="index.html" class="brand-text">AFRI <span>TECH</span></a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="assets/sam.jpg" alt="Samsung Air Conditioning Systems">
-                <div class="slide-content">
-                    <h2>Premium Samsung Appliances in South Sudan</h2>
-                    <p class="lead">Your trusted partner for sales, installation, and maintenance of genuine Samsung products. Experience quality and reliability with South Sudan's leading appliance provider.</p>
-                    <div class="hero-buttons">
-                        <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
-                        <a href="services.html" class="btn btn-secondary">Our Services</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mySlides fade">
-                <img src="assets/sams.png" alt="Samsung Generators">
-                <div class="slide-content">
-                    <h2>Reliable Power Solutions for South Sudan</h2>
-                    <p class="lead">Industry-leading Samsung generators ensure uninterrupted power supply for homes and businesses. Beat load shedding with our premium power solutions.</p>
-                    <div class="hero-buttons">
-                        <a href="products.html" class="btn btn-primary">View Generators</a>
-                        <a href="contact.html" class="btn btn-secondary">Get Quote</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mySlides fade">
-                <img src="assets/samsu.jpg" alt="Samsung Water Heaters">
-                <div class="slide-content">
-                    <h2>Advanced Climate Control Solutions</h2>
-                    <p class="lead">From efficient water heating to smart air conditioning, discover Samsung's innovative technology designed for South Sudan's unique climate conditions.</p>
-                    <div class="hero-buttons">
-                        <a href="products.html" class="btn btn-primary">Explore Products</a>
-                        <a href="contact.html" class="btn btn-secondary">Contact Experts</a>
-                    </div>
-                </div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-
-            <div class="dots-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Stats Section -->
-    <section class="quick-stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5,000+</div>
-                    <div class="stat-label">Happy Customers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support Available</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Genuine Parts</div>
-                </div>
-            </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Electronics in Juba</h1>
+            <p>Quality Gadgets • Fast Delivery • 100% Dubai Imports</p>
+            <a href="products.html" class="btn">Shop Now</a>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="section features">
+    <section class="features">
         <div class="container">
-            <h2 class="section-title">Why Choose Blue Star Engineering?</h2>
-            <p class="section-subtitle">We are South Sudan's premier Samsung partner, offering unmatched expertise and service excellence</p>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Certified Professionals</h3>
-                    <p>Our technicians are Samsung-certified with extensive training and years of experience handling South Sudan's unique climate challenges.</p>
+                <div class="feature-item loading">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Free Delivery</h3>
+                    <p>Free and fast 30-40 minute delivery within Juba city limits.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Quick Response</h3>
-                    <p>We guarantee prompt service with minimal waiting time. Emergency repairs available 24/7 across Juba and surrounding areas.</p>
+                <div class="feature-item loading">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality Guarantee</h3>
+                    <p>All our gadgets are 100% imported from Dubai with warranty.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Genuine Parts</h3>
-                    <p>We use only authentic Samsung parts for all repairs and replacements, ensuring optimal performance and warranty protection.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock customer support for emergencies and technical queries. We speak your language and understand your needs.</p>
+                <div class="feature-item loading">
+                    <i class="fas fa-headset"></i>
+                    <h3>Expert Support</h3>
+                    <p>Professional technical support and after-sales service.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Preview Section -->
-    <section class="section about-preview">
+    <!-- Call to Action Section -->
+    <section class="page-section" style="background: var(--color-navy); color: var(--color-white);">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>South Sudan's Trusted Samsung Partner Since 2010</h2>
-                    <p>Blue Star Engineering has been at the forefront of providing premium Samsung appliances and professional services to the people of South Sudan. With over 15 years of experience, we understand the unique challenges of operating in South Sudan's climate and infrastructure conditions.</p>
-                    
-                    <div class="about-highlights">
-                        <div class="highlight">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Official Samsung Authorized Dealer</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Local Expertise with Global Standards</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Custom Solutions for South Sudan's Climate</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Comprehensive After-Sales Support</span>
-                        </div>
-                    </div>
-                    
-                    <a href="about.html" class="btn btn-primary">Learn More About Us</a>
-                </div>
-                <div class="about-image">
-                    <img src="assets/samsun.jpg" alt="Our Team at Blue Star Engineering">
-                </div>
+            <div class="section-title">
+                <h2 style="color: var(--color-white);">Ready to Experience Quality?</h2>
+                <p style="color: var(--color-light-gray); max-width: 600px; margin: 0 auto;">Join thousands of satisfied customers in Juba who trust AFRI TECH for their electronics needs.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="section products-preview">
-        <div class="container">
-            <h2 class="section-title">Premium Samsung Products</h2>
-            <p class="section-subtitle">Discover our range of high-quality Samsung appliances designed for South Sudanese homes and businesses</p>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-badge">Bestseller</div>
-                    <img src="assets/sam.jpg" alt="Samsung DVM S2">
-                    <div class="product-info">
-                        <h3>Samsung DVM S2 Multi-Air Conditioning</h3>
-                        <p>Advanced multi-split air conditioning system perfect for large buildings, offices, and commercial spaces in Juba's climate.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Energy Efficient Inverter Technology</li>
-                            <li><i class="fas fa-check"></i> Quiet Operation for Office Environments</li>
-                            <li><i class="fas fa-check"></i> Smart Control & Monitoring</li>
-                            <li><i class="fas fa-check"></i> Ideal for South Sudan's Heat</li>
-                        </ul>
-                        <a href="products.html" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-badge">New</div>
-                    <img src="assets/samsu.jpg" alt="Samsung WindFree">
-                    <div class="product-info">
-                        <h3>Samsung WindFree™ Air Conditioner</h3>
-                        <p>Experience cool air without the direct wind chill. Perfect for bedrooms, living rooms, and sensitive environments.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Gentle Cooling Without Direct Airflow</li>
-                            <li><i class="fas fa-check"></i> Digital Inverter for Energy Savings</li>
-                            <li><i class="fas fa-check"></i> Triple Protection Plus</li>
-                            <li><i class="fas fa-check"></i> WiFi & SmartThings Connectivity</li>
-                        </ul>
-                        <a href="products.html" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-badge">Popular</div>
-                    <img src="assets/sams.png" alt="Samsung Generators">
-                    <div class="product-info">
-                        <h3>Samsung Power Generators</h3>
-                        <p>Reliable power solutions designed to handle South Sudan's power challenges with advanced safety features.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Automatic Voltage Regulation</li>
-                            <li><i class="fas fa-check"></i> Low Noise Operation</li>
-                            <li><i class="fas fa-check"></i> Fuel Efficient Design</li>
-                            <li><i class="fas fa-check"></i> Extended Runtime Capability</li>
-                        </ul>
-                        <a href="products.html" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="products.html" class="btn btn-secondary">View All Products</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Preview Section -->
-    <section class="section services-preview">
-        <div class="container">
-            <h2 class="section-title">Our Professional Services</h2>
-            <p class="section-subtitle">Comprehensive Samsung appliance services tailored for South Sudanese customers</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Professional Installation</h3>
-                    <p>Expert installation by certified technicians ensuring optimal performance and safety standards.</p>
-                    <ul>
-                        <li>Residential & Commercial Installations</li>
-                        <li>Safety Compliance Checks</li>
-                        <li>User Training & Demonstration</li>
-                    </ul>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Regular Maintenance</h3>
-                    <p>Preventive maintenance plans to extend appliance lifespan and ensure efficient operation.</p>
-                    <ul>
-                        <li>Scheduled Maintenance Plans</li>
-                        <li>Performance Optimization</li>
-                        <li>Early Problem Detection</li>
-                    </ul>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-wrench"></i>
-                    </div>
-                    <h3>Expert Repairs</h3>
-                    <p>Fast and reliable repair services using genuine Samsung parts and advanced diagnostics.</p>
-                    <ul>
-                        <li>Same-Day Service Available</li>
-                        <li>Genuine Parts Guarantee</li>
-                        <li>Emergency Repairs</li>
-                    </ul>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="services.html" class="btn btn-primary">Explore All Services</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <p class="section-subtitle">Hear from satisfied customers across South Sudan</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Blue Star Engineering installed AC units in our entire office building. Their team was professional, efficient, and the systems have been running perfectly despite Juba's heat."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-name">Michael Deng</div>
-                        <div class="author-title">Office Manager, Juba City</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The Samsung generator we purchased has been a lifesaver during power outages. Blue Star's maintenance service keeps it running smoothly year after year."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-name">Sarah Michael</div>
-                        <div class="author-title">Restaurant Owner, Juba</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Their 24/7 support is amazing! When our water heater stopped working on a weekend, they had a technician at our home within hours. Highly recommended!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-name">James Kuol</div>
-                        <div class="author-title">Homeowner, Juba</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Upgrade Your Home or Business?</h2>
-                <p>Contact Blue Star Engineering today for a free consultation and discover the perfect Samsung solution for your needs.</p>
-                <div class="cta-features">
-                    <div class="cta-feature">
-                        <i class="fas fa-check"></i>
-                        <span>Free Consultation & Quote</span>
-                    </div>
-                    <div class="cta-feature">
-                        <i class="fas fa-check"></i>
-                        <span>Professional Installation</span>
-                    </div>
-                    <div class="cta-feature">
-                        <i class="fas fa-check"></i>
-                        <span>After-Sales Support</span>
-                    </div>
-                </div>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Contact Us Now</a>
-                    <a href="tel:+211927490141" class="btn btn-secondary">
-                        <i class="fas fa-phone"></i> Call +211 927 490 141
-                    </a>
-                </div>
+            <div style="text-align: center;">
+                <a href="contact.html" class="btn" style="background: var(--color-gold); color: var(--color-navy); margin-right: 1rem;">Contact Us</a>
+                <a href="https://wa.me/211927930310" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-column">
-                    <h4>Blue Star Engineering</h4>
-                    <p>South Sudan's premier Samsung appliance provider since 2010. Quality products, professional services, and unmatched customer support.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <img src="assets/afrilogo.jpg" alt="AFRI TECH Logo" class="footer-logo">
+                    <h3>AFRI TECH</h3>
+                    <p>Your trusted partner for quality electronics and electrical services in Juba, South Sudan.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Products</a></li>
+                        <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="products.html">Air Conditioners</a></li>
-                        <li><a href="products.html">Water Heaters</a></li>
-                        <li><a href="products.html">Generators</a></li>
-                        <li><a href="products.html">Thermostats</a></li>
-                        <li><a href="products.html">Lighting Solutions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
-                        <li><i class="fas fa-phone"></i> +211 927 490 141</li>
-                        <li><i class="fas fa-phone"></i> 0910 545 500</li>
-                        <li><i class="fas fa-envelope"></i> info@bluestar-eng.com</li>
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+211927930310"><i class="fas fa-phone-alt"></i> +211 927 930 310</a></li>
+                        <li><a href="https://wa.me/211927930310"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:info@afritech.com"><i class="fas fa-envelope"></i> info@afritech.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Blue Star Engineering Co. Ltd. All Rights Reserved. | Official Samsung Partner in South Sudan</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AFRI TECH. All rights reserved. | Proudly serving Juba, South Sudan</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
