@@ -1,331 +1,209 @@
-// AFRI TECH Website JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+// DOM Elements
+const header = document.querySelector('header');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mainNav = document.getElementById('mainNav');
+const navLinks = document.querySelectorAll('.nav-link');
+const whatsappFloat = document.getElementById('whatsappFloat');
+const whatsappPopup = document.getElementById('whatsappPopup');
+const closePopup = document.getElementById('closePopup');
+const fadeElements = document.querySelectorAll('.fade-in');
+const contactForm = document.getElementById('contactForm');
+
+// Function to set active navigation link based on current page
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Sticky Header on Scroll 
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
     
-    if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+    // Trigger fade-in animations on scroll
+    triggerFadeIn();
+});
+
+// Mobile Menu Toggle
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+}
+
+// Close mobile menu when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            if (mobileMenuBtn) {
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+    });
+});
+
+// WhatsApp Popup
+if (whatsappFloat) {
+    whatsappFloat.addEventListener('click', () => {
+        whatsappPopup.classList.toggle('show');
+    });
+}
+
+if (closePopup) {
+    closePopup.addEventListener('click', () => {
+        whatsappPopup.classList.remove('show');
+    });
+}
+
+// Close popup when clicking outside
+document.addEventListener('click', (e) => {
+    if (whatsappFloat && whatsappPopup && !whatsappFloat.contains(e.target) && !whatsappPopup.contains(e.target)) {
+        whatsappPopup.classList.remove('show');
+    }
+});
+
+// Contact Form Submission
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Simple validation
+        if (!name || !email || !message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // In a real implementation, you would send this data to a server
+        // For this demo, we'll just show an alert
+        alert(`Thank you, ${name}! Your message has been sent. We will contact you at ${email} within 24 hours.`);
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
+
+// Fade-in animation on scroll
+function triggerFadeIn() {
+    fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('visible');
+        }
+    });
+}
+
+// FAQ Accordion Functionality
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
             });
         });
     }
+}
+
+// Form input focus effects
+function initFormFocusEffects() {
+    const formControls = document.querySelectorAll('.form-control');
     
-    // Sticky Navigation
-    const header = document.querySelector('header');
-    if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
-                header.style.background = 'var(--color-white)';
-                header.style.backdropFilter = 'none';
+    formControls.forEach(control => {
+        control.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        control.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.parentElement.classList.remove('focused');
             }
         });
-    }
-    
-    // Active Navigation Link Highlighting
-    function setActiveNavLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            const linkPage = link.getAttribute('href');
-            if (linkPage === currentPage) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Set active navigation link
     setActiveNavLink();
     
-    // Loading Animations
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-item, .product-card, .service-card');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
+    // Initialize animations
+    triggerFadeIn();
+    
+    // Initialize FAQ accordion if on contact page
+    initFAQAccordion();
+    
+    // Initialize form focus effects
+    initFormFocusEffects();
+    
+    // Add parallax effect to elements with parallax class
+    const parallaxElements = document.querySelectorAll('.parallax');
+    
+    if (parallaxElements.length > 0) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
             
-            if (elementPosition < screenPosition) {
-                element.classList.add('loaded');
-            }
-        });
-    };
-    
-    // Initial animation check
-    animateOnScroll();
-    
-    // Animation on scroll
-    window.addEventListener('scroll', animateOnScroll);
-    
-    // Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Basic validation
-            if (!name || !email || !message) {
-                showNotification('Please fill in all fields.', 'error');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            // Simulate form submission
-            showNotification('Thank you for your message! We will get back to you soon.', 'success');
-            contactForm.reset();
-            
-            // In a real application, you would send the data to a server here
-            // Example using fetch:
-            /*
-            fetch('your-server-endpoint', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: message
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                showNotification('Thank you for your message! We will get back to you soon.', 'success');
-                contactForm.reset();
-            })
-            .catch(error => {
-                showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
-            });
-            */
-        });
-    }
-    
-    // Email validation helper
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-    
-    // Notification system
-    function showNotification(message, type = 'info') {
-        // Remove existing notifications
-        const existingNotification = document.querySelector('.notification');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
-        
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
-            <div class="notification-content">
-                <span>${message}</span>
-                <button class="notification-close">&times;</button>
-            </div>
-        `;
-        
-        // Add styles
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: ${type === 'error' ? '#e74c3c' : type === 'success' ? '#27ae60' : '#3498db'};
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 10000;
-            max-width: 400px;
-            animation: slideInRight 0.3s ease;
-        `;
-        
-        const notificationContent = notification.querySelector('.notification-content');
-        notificationContent.style.cssText = `
-            display: flex;
-            justify-content: between;
-            align-items: center;
-            gap: 1rem;
-        `;
-        
-        const closeBtn = notification.querySelector('.notification-close');
-        closeBtn.style.cssText = `
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 0;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        `;
-        
-        closeBtn.addEventListener('click', () => {
-            notification.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => notification.remove(), 300);
-        });
-        
-        document.body.appendChild(notification);
-        
-        // Auto remove after 5 seconds
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.style.animation = 'slideOutRight 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }
-        }, 5000);
-    }
-    
-    // Add CSS animations for notifications
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOutRight {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Product counter animation
-    function animateCounter(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-                element.textContent = target + '+';
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(start) + '+';
-            }
-        }, 16);
-    }
-    
-    // Initialize counters if they exist
-    const counterElements = document.querySelectorAll('.counter');
-    if (counterElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    animateCounter(entry.target, target);
-                    observer.unobserve(entry.target);
+            parallaxElements.forEach(element => {
+                const elementOffset = element.offsetTop;
+                const elementHeight = element.offsetHeight;
+                
+                // Only apply parallax if element is in viewport
+                if (scrolled > elementOffset - window.innerHeight && scrolled < elementOffset + elementHeight) {
+                    const speed = 0.5;
+                    const yPos = -(scrolled - elementOffset) * speed;
+                    element.style.transform = `translateY(${yPos}px)`;
                 }
             });
-        }, { threshold: 0.5 });
-        
-        counterElements.forEach(counter => observer.observe(counter));
+        });
     }
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // Back to top button
-    const backToTop = document.createElement('button');
-    backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
-    backToTop.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--color-gold);
-        color: var(--color-navy);
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-        z-index: 999;
-    `;
-    
-    backToTop.addEventListener('mouseenter', function() {
-        this.style.background = 'var(--color-navy)';
-        this.style.color = 'var(--color-white)';
-        this.style.transform = 'translateY(-3px)';
-    });
-    
-    backToTop.addEventListener('mouseleave', function() {
-        this.style.background = 'var(--color-gold)';
-        this.style.color = 'var(--color-navy)';
-        this.style.transform = 'translateY(0)';
-    });
-    
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    document.body.appendChild(backToTop);
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTop.style.display = 'flex';
-        } else {
-            backToTop.style.display = 'none';
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
         }
     });
-    
-    console.log('AFRI TECH website loaded successfully!');
 });
